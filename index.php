@@ -18,7 +18,12 @@
                 'hand' => array(),
                 'points' => 0
                 );
-            /*$player3 = array();
+            $player1 = array
+            ('name' => 'Ariel', 
+            'imgURL' => '.pictures/baby_me.jpg',
+            'hand' => array(),
+            'points' => 0
+            );
             $player4 = array();*/
             
             $allPlayers = array(

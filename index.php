@@ -12,8 +12,13 @@
                 'imgURL' => './img/userPics/AndreaL1.jpg',
                 'hand' => array(),
                 'points' => 0);
-            /*$player2 = array();
-            $player3 = array();
+            $player2 = array(
+                'name' => 'celine',
+                'imgURL' => 'img/userPics/cwu.jpeg',
+                'hand' => array(),
+                'points' => 0
+                );
+            /*$player3 = array();
             $player4 = array();*/
             
             $allPlayers = array(

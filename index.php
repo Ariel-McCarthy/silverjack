@@ -20,11 +20,16 @@
                 );
             $player1 = array
             ('name' => 'Ariel', 
-            'imgURL' => '.pictures/baby_me.jpg',
+            'imgURL' => 'img/baby_me.jpg',
             'hand' => array(),
             'points' => 0
             );
-            $player4 = array();*/
+            $player4 = array(
+                'name' => 'anakareli',
+                'imgURL' => 'img/userPics/anakareli.jpg',
+                'hand' => array(),
+                'points' => 0
+                );
             
             $allPlayers = array(
                 

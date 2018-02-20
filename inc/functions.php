@@ -1,4 +1,14 @@
 <?php
+
+    function printGameState($allPlayers)
+    {
+        foreach($allPlayers as $player)
+        {
+            echo "<img src='" . $player['imgURL']. "'/><br>";
+            echo $player['name'] . "<br/>";                
+        }        
+    }        
+            
     function generateDeck()
     {
         // This function generates an array containing all the cards we want to

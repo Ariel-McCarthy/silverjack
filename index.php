@@ -48,6 +48,7 @@
             
             printGameState($allPlayers);
             
+            }
         ?>
     </body>
     </head>

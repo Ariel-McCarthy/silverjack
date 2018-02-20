@@ -12,25 +12,25 @@
             //echo "<br>";
             
             
-            $player3 = array(
+            $player2 = array(
                 'name' => 'Andrea',
                 'imgURL' => './img/userPics/AndreaL1.jpg',
                 'hand' => array(),
                 'points' => 0
                 );
-            $player2 = array(
+            $player4 = array(
                 'name' => 'Celine',
                 'imgURL' => 'img/userPics/cwu.jpeg',
                 'hand' => array(),
                 'points' => 0
                 );
-            $player1 = array(
+            $player3 = array(
                 'name' => 'Ariel', 
                 'imgURL' => 'img/userPics/baby_me.jpg',
                 'hand' => array(),
                 'points' => 0
                 );
-            $player4 = array(
+            $player1 = array(
                 'name' => 'Anakareli',
                 'imgURL' => 'img/userPics/anakareli.jpg',
                 'hand' => array(),
@@ -46,7 +46,6 @@
                 );
             
             printGameState($allPlayers);
-            
         ?>
     </body>
 </html>

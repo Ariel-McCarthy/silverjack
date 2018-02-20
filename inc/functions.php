@@ -33,7 +33,7 @@
     {
         foreach($allPlayers as $player)
         {
-            echo "<img src='" . $player['imgURL']. "'/><br>";
+            echo "<img width='75'src='" . $player['imgURL']. "'/><br>";
             echo $player['name'] . "<br/>";                
         }        
     }        

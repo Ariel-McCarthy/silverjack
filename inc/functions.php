@@ -3,6 +3,14 @@
     {
         // This function generates an array containing all the cards we want to
         // use.
+        $suits = array("clubs","dimonds","spades","hearts");
+                
+        $rSuite = rand(0,3);
+        $rIndex = rand(1,13);
+        $rNumb = ($rSuite * 13) + $rIndex;
+        
+        echo"<img src='img/cards/$suits[$rSuite]/". $rIndex. ".png'/>";
+        
     }
     
     function getHand($deck)

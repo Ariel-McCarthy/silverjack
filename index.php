@@ -3,13 +3,14 @@
     <head>
     <body>
         <?php
-            //This line is to display clubs card
-            //echo "<img src ='./img/cards/clubs/2.png' />";  
-            //echo "<br>";
+            include 'inc/functions.php';
             
-            $player3 = array(
+            generateDeck();
+            echo "<br>";
+            
+            $player1 = array(
                 'name' => 'andrea',
-                'imgURL' => './img/userPics/AndreaL1.jpg',
+                'imgURL' => './img/userPics/A.L.jpg',
                 'hand' => array(),
                 'points' => 0
                 );
@@ -19,7 +20,7 @@
                 'hand' => array(),
                 'points' => 0
                 );
-            $player1 = array(
+            $player3 = array(
                 'name' => 'Ariel', 
                 'imgURL' => 'img/userPics/baby_me.jpg',
                 'hand' => array(),
@@ -49,6 +50,7 @@
             
             printGameState($allPlayers);
             
+          
         ?>
     </body>
     </head>

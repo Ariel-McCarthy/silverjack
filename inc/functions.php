@@ -32,7 +32,7 @@
     
     function printGameState($allPlayers)
     {
-        shuffle($allPlayers);
+        shuffle($allPlayers); // prints the players in random order
         
         foreach ($allPlayers as $player)
         {

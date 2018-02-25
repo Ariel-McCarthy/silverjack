@@ -29,6 +29,42 @@
     $andreasPic = getimagesize("img/userPics/AndreaL1.jpg");
     imageResize($andreasPic[0], $andreasPic[1], 150);
 */
+            $player1 = array(
+                'name' => 'Andrea',
+                'imgURL' => 'img/userPics/AndreaL1.jpg',
+                'hand' => array(),
+                'points' => 0
+                );
+                
+            $player2 = array(
+                'name' => 'Celine',
+                'imgURL' => 'img/userPics/cwu.jpeg',
+                'hand' => array(),
+                'points' => 0
+                );
+                
+            $player3 = array(
+                'name' => 'Ariel', 
+                'imgURL' => 'img/userPics/baby_me.jpg',
+                'hand' => array(),
+                'points' => 0
+                );
+                
+            $player4 = array(
+                'name' => 'Anakareli',
+                'imgURL' => 'img/userPics/anakareli.jpg',
+                'hand' => array(),
+                'points' => 0
+                );
+                
+            $allPlayers = array(
+                $player1,
+                $player2,
+                $player3,
+                $player4
+                ); 
+    $suits = array("clubs","diamonds","hearts","spades");
+    $playerInfo = array($player1, $player2,$player3,$player4);
     
     function printGameState($allPlayers)
     {
@@ -46,46 +82,75 @@
         // This function generates an array containing all the cards we want to
         // use.
         
-        $suits = array("clubs","dimonds","spades","hearts");
-        $rSuite = rand(0,3);
-        $rIndex = rand(1,13);
-        $rNumb = ($rSuite * 13) + $rIndex;
+       
+      $deck = array();
+       
+       for($i=1; $i<=52; $i++){
+           $deck[] = $i;
+       }
+      shuffle($deck);
+       
+       
         
-        echo "<img src='img/cards/$suits[$rSuite]/".$rIndex.".png'/>";
     }
-    
-    function getHand($deck)
+   
+    function getHand($allPlayers)
     {
         // This function takes an array containing each card of the deck and
         // returns an array containing one hand.
         // A hand is a set of a random number of cards whose value does not
         // exceed 42.
-    }
-    
-    function getPoints($value, $change)
-    {
-        // This function takes an integer that represents the points won and
-        // another integer whose value determine if we change the static variable
-        // returned.
+        global $suits;
         
-        static $points = 0;
-        
-        if ($change == 1)
-        {
-            $points = $value;
+        if($allplayers === "player1"){
+            $counter = 0;
+            while($counter <= 35){
+                $card = array_pop(generateDeck());
+                $suit = $suits[floor($card/13)];
+                $face = $card %13;
+                
+                if($face == 0){
+                    $face =13;
+                }
+                $player1[] = $card;
+                echo "<img src = cards/" . $suit . "/" .$face . ".png>";
+                
+                $counter += $face;
+            }
         }
-        
-        return $points;
     }
     
-    function displayHand($hand)
+    function displayHand($allPlayers)
     {
+       global $suits;
+       global $playerInfo;
+       
+       $points = $playerInfo[$allPlayers];
+       
+       $cards = gethand($allPlayers);
+       
+       if($allPlayers === "player1"){
+           foreach($player1 as $card){
+               $suit = $suits[floor($card / 13)];
+               $face = $card %13;
+               if($face == 0){
+                   $face = 13;
+                   
+                   $points = $points + $face;
+               }
+               
+            }   
+            $playerInfo[$allPlayers[$player1]] = $points;
+            echo"Total: " . $playerInfo[$allPlayers[$player1]];
+           
+       }
+       
         // This function prints the hand.
         
-        foreach ($hand as $card)
-        {
-            echo "<img src='".$card."' />&nbsp;";
-        }
+        //foreach ($hand as $card)
+        //{
+          //  echo "<img src='".$card."' />&nbsp;";
+        //}
     }
     
     function displayWinners()

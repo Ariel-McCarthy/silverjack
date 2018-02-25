@@ -8,45 +8,17 @@
         <?php
             include 'inc/functions.php';
             
-            generateDeck();
-            echo "<br/>";
             
-            $player1 = array(
-                'name' => 'Andrea',
-                'imgURL' => 'img/userPics/AndreaL1.jpg',
-                'hand' => array(),
-                'points' => 0
-                );
-                
-            $player2 = array(
-                'name' => 'Celine',
-                'imgURL' => 'img/userPics/cwu.jpeg',
-                'hand' => array(),
-                'points' => 0
-                );
-                
-            $player3 = array(
-                'name' => 'Ariel', 
-                'imgURL' => 'img/userPics/baby_me.jpg',
-                'hand' => array(),
-                'points' => 0
-                );
-                
-            $player4 = array(
-                'name' => 'Anakareli',
-                'imgURL' => 'img/userPics/anakareli.jpg',
-                'hand' => array(),
-                'points' => 0
-                );
-                
-            $allPlayers = array(
-                $player1,
-                $player2,
-                $player3,
-                $player4
-                );
+            
+            echo "<br>";
+            
+        
                 
             printGameState($allPlayers);
+            //generateDeck();
+            getHand($allPlayers);
+            
+            
         ?>
     </body>
 </html>

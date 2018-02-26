@@ -94,67 +94,37 @@
         
     }
    
-    function getHand($allPlayers)
+    function getHand($deck)
     {
         // This function takes an array containing each card of the deck and
         // returns an array containing one hand.
         // A hand is a set of a random number of cards whose value does not
         // exceed 42.
-        global $suits;
         
-        if($allplayers === "player1"){
-            $counter = 0;
-            while($counter <= 35){
-                $card = array_pop(generateDeck());
-                $suit = $suits[floor($card/13)];
-                $face = $card %13;
-                
-                if($face == 0){
-                    $face =13;
-                }
-                $player1[] = $card;
-                echo "<img src = cards/" . $suit . "/" .$face . ".png>";
-                
-                $counter += $face;
-            }
-        }
+        
     }
     
-    function displayHand($allPlayers)
+    function displayHand($hand)
     {
-       global $suits;
-       global $playerInfo;
-       
-       $points = $playerInfo[$allPlayers];
-       
-       $cards = gethand($allPlayers);
-       
-       if($allPlayers === "player1"){
-           foreach($player1 as $card){
-               $suit = $suits[floor($card / 13)];
-               $face = $card %13;
-               if($face == 0){
-                   $face = 13;
-                   
-                   $points = $points + $face;
-               }
-               
-            }   
-            $playerInfo[$allPlayers[$player1]] = $points;
-            echo"Total: " . $playerInfo[$allPlayers[$player1]];
-           
-       }
-       
-        // This function prints the hand.
+         //This function prints the hand.
         
-        //foreach ($hand as $card)
-        //{
-          //  echo "<img src='".$card."' />&nbsp;";
-        //}
+        foreach ($hand as $card)
+        {
+          echo "<img src='".$card."' />&nbsp;";
+        }
     }
     
     function displayWinners()
     {
         // This function prints the winners and the points they won.
+    }
+    function getPoints($value, $change)
+    {
+        static $points = 0;
+        
+        if($change == 1){
+            $points = $value; 
+        }
+        return $points;
     }
 ?>

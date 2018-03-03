@@ -82,49 +82,68 @@
         // This function generates an array containing all the cards we want to
         // use.
         
-       
-      $deck = array();
-       
-       for($i=1; $i<=52; $i++){
-           $deck[] = $i;
-       }
-      shuffle($deck);
-       
-       
+        $deck = array();
         
+        for ($i=1; $i<=52; $i++)
+        {
+            $deck[] = $i;
+        }
+        shuffle($deck);
     }
-   
+    
     function getHand($deck)
     {
         // This function takes an array containing each card of the deck and
         // returns an array containing one hand.
         // A hand is a set of a random number of cards whose value does not
         // exceed 42.
+    }
+    
+    function getPoints($value, $change)
+    {
+        static $points = 0;
         
+        if ($change == 1)
+        {
+            $points = $value; 
+        }
         
+        return $points;
     }
     
     function displayHand($hand)
     {
-         //This function prints the hand.
-        
         foreach ($hand as $card)
         {
           echo "<img src='".$card."' />&nbsp;";
         }
     }
     
-    function displayWinners()
+    function displayWinners($players)
     {
-        // This function prints the winners and the points they won.
-    }
-    function getPoints($value, $change)
-    {
-        static $points = 0;
+        $total = 0;
+        $max = 0;
+        $winners = array();
         
-        if($change == 1){
-            $points = $value; 
+        for ($i = 0; $i < 4; $i++)
+        {
+            $total += $players[$i]['points'];
+            
+            if ($players[$i]['points'] > $max)
+            {
+                $max = $players[$i]['points'];
+            }
         }
-        return $points;
+        
+        foreach ($players as $player)
+        {
+            if ($player['points'] == $max)
+            {
+                array_push($winners, $player['name']);
+            }
+        }
+        
+        $total -= $max;
+        echo implode(", ", $winners)." wins ".$total." points!!<br/><br/>";
     }
 ?>

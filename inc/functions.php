@@ -93,10 +93,44 @@
     
     function getHand($deck)
     {
-        // This function takes an array containing each card of the deck and
-        // returns an array containing one hand.
-        // A hand is a set of a random number of cards whose value does not
-        // exceed 42.
+
+        $cur_deck = generateDeck(); // This is to ensure the deck does not reset
+        shuffle($cur_deck); // If the deck is already shuffled in generateDeck(),
+                            // this statement is useless.
+        $hand = array();
+        $sum = 0; // This will be the value that contains the points each player gains.
+                  // We pass this as an argument to getPoints()
+        
+        while(true)
+        {
+            $card = array_pop($deck);
+            //[floor($card/13)];
+            card%13;
+            
+            
+        }
+        
+        // Here, you will retrieve a card that you are going to pop off cur_deck
+        // so that it does not get retrieved again in the game.
+        // The way you will do it depends on what the deck array is composed of.
+        // If it is already an array of paths to the images:
+               - retrieve the element of the array
+        // Else:
+               - retrieve the element of the array
+               - convert it into a path to the image of the card
+         
+            if($sum + $value <= 42){ // Value is the value of the card.
+                $sum = $sum + $value;
+            }
+                array_push($hand, $card) // Card is the card you retrieved earlier.
+            else{
+                
+                break; // Because we don't want the sum of all the values in the
+                            // player's hand to exceed 42.
+            }
+        getPoints($sum, 1); // We need to store the points of the player.
+    
+        return $hand;
     }
     
     function getPoints($value, $change)

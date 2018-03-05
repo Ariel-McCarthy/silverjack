@@ -93,7 +93,7 @@
     
     function getHand($deck)
     {
-
+/*
         $cur_deck = generateDeck(); // This is to ensure the deck does not reset
         shuffle($cur_deck); // If the deck is already shuffled in generateDeck(),
                             // this statement is useless.
@@ -114,10 +114,10 @@
         // so that it does not get retrieved again in the game.
         // The way you will do it depends on what the deck array is composed of.
         // If it is already an array of paths to the images:
-               - retrieve the element of the array
+        //       - retrieve the element of the array
         // Else:
-               - retrieve the element of the array
-               - convert it into a path to the image of the card
+        //       - retrieve the element of the array
+        //       - convert it into a path to the image of the card
          
             if($sum + $value <= 42){ // Value is the value of the card.
                 $sum = $sum + $value;
@@ -131,6 +131,22 @@
         getPoints($sum, 1); // We need to store the points of the player.
     
         return $hand;
+        */
+        $cards = array(); 
+        $totalPoints = 0; 
+        $maxPoints = 41; 
+        
+        while ($totalPoints < $maxPoints) 
+        {
+            $newCard = getRandomCard(); 
+            array_push($cards, $newCard); 
+            $totalPoints += $newCard['points']; 
+        }
+        
+        return array(
+            'cards' => $cards,
+            'totalPoints' => $totalPoints
+            ); 
     }
     
     function getPoints($value, $change)

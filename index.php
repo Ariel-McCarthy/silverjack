@@ -15,7 +15,7 @@
             play();
         ?>
         <form>
-            <input type='submit' value='Play again' />
+            <input type='submit' value='Play again'/>
         </form><br/>
     </body>
 </html>

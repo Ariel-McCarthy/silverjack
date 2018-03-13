@@ -42,7 +42,7 @@
             }
         ?>
         <form>
-            <input type='submit' value='Play again' />
+            <input type='submit' value='Play again'/>
         </form><br/>
         <div style="position: absolute; top: 1%; left: 1%; text-align: left;">
             <h3>Session</h3>
